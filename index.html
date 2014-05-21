@@ -13,13 +13,11 @@
         <ul>
 			<li ng-repeat="todo in todos">
 				<span ng-show="todo.editMode">
-					<input type="text" ng-model="todo.name" />
-					<button ng-click="done(todo)">Done</button>
+					<input type="text" ng-model="todo.tempName" ng-keyup="done(todo, $event)"/>
 				</span>
 
 				<span ng-hide="todo.editMode">
-					<span>{{todo.name}}&nbsp;&nbsp;</span>
-					<button ng-click="edit(todo)">Edit</button>
+					<span ng-dblclick="edit(todo)">{{todo.name}}&nbsp;&nbsp;</span>
 					<button ng-click="remove($index)">X</button>
 				</span>
 			</li>

@@ -18,9 +18,15 @@ function TodoController($scope) {
 
 	$scope.edit = function (todo) {
 		todo.editMode = true;
+		todo.tempName = todo.name;
 	};
 
-	$scope.done = function (todo) {
-		todo.editMode = false;
+	$scope.done = function (todo, $event) {
+		if ($event.keyCode === 27) { 
+			todo.editMode = false; 
+		} else if ($event.keyCode === 13) {
+			todo.editMode = false;
+			todo.name = todo.tempName;
+		}
 	};
 }
