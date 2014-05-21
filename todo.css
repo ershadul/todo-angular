@@ -1,0 +1,27 @@
+.container {
+            width: 600px;
+            margin: 0 auto;
+        }
+        .click-right, .dynamic-input, .delete {
+            float: left;
+        }
+        .clear {
+            clear: both;
+        }
+        .main-input {
+            margin-bottom: 10px;
+        }
+        input {
+            width: 100%;
+            padding: 5px;
+            border-radius: 5px;
+        }
+        .input-holder div {
+            margin-bottom: 10px;
+            margin-left: 10px;
+        }
+        .input-holder input {
+            padding: 5px;
+            border-radius: 5px;
+            width: 477px;
+        }

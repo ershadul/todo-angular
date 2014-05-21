@@ -1,19 +1,19 @@
 <html>
 <head>
 	<title>AngularJS - Getting Started</title>
+	<link rel="stylesheet" type="text/css" href="todo.css">
 </head>
 
 <body ng-app="">
-	
-	<h1>AngularJS - Getting Started</h1>
-	
-	<div ng-controller="TodoController">
-		<p>Welcome {{name}}</p>
-		<input type="text" ng-model="name" /><button ng-click="add()">+ Add</button>
 
-		<ul>
+	<div class="container" ng-controller="TodoController">
+		<h1>Welcome to AngularJS ToDo</h1>
+        <div class="main-input">
+        	<input type="text" placeholder="Enter name" ng-model="name">
+        	<button ng-click="add()">+ Add</button>
+        </div>
+        <ul>
 			<li ng-repeat="todo in todos">
-				
 				<span ng-show="todo.editMode">
 					<input type="text" ng-model="todo.name" />
 					<button ng-click="done(todo)">Done</button>
@@ -27,8 +27,9 @@
 			</li>
 		</ul>
 		<p>Total: {{todos.length}}</p>
-
-	</div>
+    </div>
+    <div class="clear"></div>
+	
 	
 	<script type="text/javascript" src="angular.min.js"></script>
 	<script type="text/javascript" src="todo.js"></script>
