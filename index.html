@@ -1,0 +1,36 @@
+<html>
+<head>
+	<title>AngularJS - Getting Started</title>
+</head>
+
+<body ng-app="">
+	
+	<h1>AngularJS - Getting Started</h1>
+	
+	<div ng-controller="TodoController">
+		<p>Welcome {{name}}</p>
+		<input type="text" ng-model="name" /><button ng-click="add()">+ Add</button>
+
+		<ul>
+			<li ng-repeat="todo in todos">
+				
+				<span ng-show="todo.editMode">
+					<input type="text" ng-model="todo.name" />
+					<button ng-click="done(todo)">Done</button>
+				</span>
+
+				<span ng-hide="todo.editMode">
+					<span>{{todo.name}}&nbsp;&nbsp;</span>
+					<button ng-click="edit(todo)">Edit</button>
+					<button ng-click="remove($index)">X</button>
+				</span>
+			</li>
+		</ul>
+		<p>Total: {{todos.length}}</p>
+
+	</div>
+	
+	<script type="text/javascript" src="angular.min.js"></script>
+	<script type="text/javascript" src="todo.js"></script>
+</body>
+</html>
