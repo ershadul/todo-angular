@@ -3,8 +3,8 @@ function TodoController($scope) {
 
 	$scope.todos = [];
 
-	$scope.add = function () {
-		if ($scope.name.trim()) {
+	$scope.add = function ($event) {
+		if ($event.keyCode === 13 && $scope.name.trim()) {
 			$scope.todos.push(
 				{ name: $scope.name }
 			);

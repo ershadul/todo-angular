@@ -1,16 +1,14 @@
 <html>
 <head>
-	<title>AngularJS - Getting Started</title>
+	<title>Welcome to AngularJS ToDo</title>
 	<link rel="stylesheet" type="text/css" href="todo.css">
 </head>
 
 <body ng-app="">
-
 	<div class="container" ng-controller="TodoController">
 		<h1>Welcome to AngularJS ToDo</h1>
         <div class="main-input">
-        	<input type="text" placeholder="Enter name" ng-model="name">
-        	<button ng-click="add()">+ Add</button>
+        	<input type="text" placeholder="Enter name" ng-model="name" ng-keyup="add($event)">
         </div>
         <ul>
 			<li ng-repeat="todo in todos">
