@@ -1,4 +1,5 @@
-function TodoController($scope) {
+angular.module('todoApp', [])
+.controller('TodoController', function($scope) {
 	$scope.name = 'NewsCred';
 
 	$scope.todos = [];
@@ -29,4 +30,5 @@ function TodoController($scope) {
 			todo.name = todo.tempName;
 		}
 	};
-}
+
+});
