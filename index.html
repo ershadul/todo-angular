@@ -1,33 +1,37 @@
+<!DOCTYPE>
 <html>
 <head>
 	<title>Welcome to AngularJS ToDo</title>
 	<link rel="stylesheet" type="text/css" href="todo.css">
 </head>
 
-<body ng-app="">
+<body ng-app="todoApp">
 	<div class="container" ng-controller="TodoController">
 		<h1>Welcome to AngularJS ToDo</h1>
-        <div class="main-input">
-        	<input type="text" placeholder="Enter name" ng-model="name" ng-keyup="add($event)">
-        </div>
-        <ul>
-			<li ng-repeat="todo in todos">
+    <div class="main-input">
+      <input type="text" placeholder="Enter name" ng-model="name" ng-keyup="add($event)">
+    </div>
+    <div class="main-input">
+    	<input type="text" placeholder="Search name" ng-model="ultapalta">
+    </div>
+    <ul>
+			<li ng-repeat="todo in todos | filter:ultapalta">
 				<span ng-show="todo.editMode">
 					<input type="text" ng-model="todo.tempName" ng-keyup="done(todo, $event)"/>
 				</span>
 
 				<span ng-hide="todo.editMode">
-					<span ng-dblclick="edit(todo)">{{todo.name}}&nbsp;&nbsp;</span>
+					<comment ng-dblclick="edit(todo)" element="todo"></comment>
 					<button ng-click="remove($index)">X</button>
 				</span>
 			</li>
 		</ul>
 		<p>Total: {{todos.length}}</p>
-    </div>
-    <div class="clear"></div>
+  </div>
+  <div class="clear"></div>	
 	
-	
-	<script type="text/javascript" src="angular.min.js"></script>
+  <script type="text/javascript" src="angular.min.js"></script>
+	<script type="text/javascript" src="http://sparkalow.github.io/angular-truncate/js/truncate.js"></script>
 	<script type="text/javascript" src="todo.js"></script>
 </body>
 </html>
